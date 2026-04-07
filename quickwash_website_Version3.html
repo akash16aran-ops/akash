@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickWash – Doorstep Car Wash Chennai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ff8c00;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff8c00;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ff8c00;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 102, 204, 0.7), rgba(0, 74, 153, 0.7)), url('https://images.unsplash.com/photo-1601584942256-08a2b76faf3e?w=1200&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-content span {
+            color: #ff8c00;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 140, 0, 0.4);
+            background: linear-gradient(135deg, #ff6b00 0%, #ff5500 100%);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 20px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #0066cc;
+        }
+
+        .section-title span {
+            color: #ff8c00;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #0066cc;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.2);
+            border-left-color: #ff8c00;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+
+        .service-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff8c00;
+            margin-top: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 5rem 20px;
+            background: linear-gradient(135deg, #f0f8ff 0%, #fff5f0 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #0066cc;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Service Areas Section */
+        .service-areas {
+            padding: 5rem 20px;
+            background: white;
+        }
+
+        .areas-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .area-badge {
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .area-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+        }
+
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #0066cc;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-option {
+            position: relative;
+        }
+
+        .service-option input[type="radio"] {
+            display: none;
+        }
+
+        .service-option label {
+            display: block;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-option input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            border-color: #0066cc;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Booking Confirmation */
+        .confirmation-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .confirmation-content {
+            background: white;
+            margin: 10% auto;
+            padding: 3rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease;
+        }
+
+        .confirmation-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .confirmation-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-details {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .confirmation-details p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .confirmation-details strong {
+            color: #0066cc;
+        }
+
+        .confirmation-content .close-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .confirmation-content .close-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 20px;
+            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title span {
+            color: #ff8c00;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin: 2rem 0;
+        }
+
+        .contact-info a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: white;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: #ff8c00;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #ff6b00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: #004a99;
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .form-row,
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 20% auto;
+            }
+
+            .confirmation-content {
+                width: 95%;
+                margin: 30% auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 99;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        .scroll-to-top.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .form-group input.error,
+        .form-group select.error {
+            border-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Quick<span>Wash</span></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#areas">Areas</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Quick<span>Wash</span> – Doorstep Car Wash Chennai</h1>
+            <p>We clean your car at your home. Fast and affordable service.</p>
+            <button class="cta-button" id="bookNowBtn">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our <span>Services</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🚗 Car Wash</h3>
+                    <p>Complete exterior and interior washing for your car with premium quality products.</p>
+                    <div class="price">₹199</div>
+                </div>
+                <div class="service-card">
+                    <h3>🏍️ Bike Wash</h3>
+                    <p>Professional bike cleaning service with careful handling of all parts.</p>
+                    <div class="price">₹99</div>
+                </div>
+                <div class="service-card">
+                    <h3>🛋️ Interior Cleaning</h3>
+                    <p>Deep cleaning of seats, carpets, and interior surfaces for a fresh feel.</p>
+                    <div class="price">₹299</div>
+                </div>
+                <div class="service-card">
+                    <h3>✨ Full Cleaning</h3>
+                    <p>Complete exterior and interior detailing for the ultimate shine and cleanliness.</p>
+                    <div class="price">₹399</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose <span>Us</span></h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🚪</div>
+                    <h3>Doorstep Service</h3>
+                    <p>We come to your home and clean your vehicle at your convenience.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Work</h3>
+                    <p>Quick and efficient service without compromising on quality standards.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Best prices in Chennai with no hidden charges or extra fees.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Trusted Service</h3>
+                    <p>Verified professionals with excellent customer reviews and ratings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="service-areas" id="areas">
+        <div class="container">
+            <h2 class="section-title">Service <span>Areas</span></h2>
+            <div class="areas-content">
+                <p>We proudly serve customers across these prime locations in Chennai:</p>
+                <div class="areas-list">
+                    <span class="area-badge">📍 Anna Nagar</span>
+                    <span class="area-badge">📍 Villivakkam</span>
+                    <span class="area-badge">📍 Kolathur</span>
+                    <span class="area-badge">📍 Ambattur</span>
+                    <span class="area-badge">📍 Mogappair</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="contact-info">
+                <p>📞 Phone: <a href="tel:+919047962844">9047962844</a></p>
+            </div>
+            <div class="contact-buttons">
+                <a href="tel:+919047962844" class="contact-button">📞 Call Now</a>
+                <a href="https://wa.me/919047962844" class="contact-button">💬 WhatsApp Us</a>
+                <button class="contact-button" id="bookNowBtn2" style="border: none; cursor: pointer;">📅 Book Online</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 QuickWash – Doorstep Car Wash Chennai. All rights reserved.</p>
+        <p>Making your car spotless at your doorstep!</p>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📅 Book Your Service</h2>
+                <button class="close-btn" id="closeBookingModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="bookingForm">
+                    <!-- Service Selection -->
+                    <div class="form-group">
+                        <label>Select Service</label>
+                        <div class="service-options">
+                            <div class="service-option">
+                                <input type="radio" id="carWash" name="service" value="Car Wash - ₹199" data-price="199">
+                                <label for="carWash">🚗 Car Wash<br><strong>₹199</strong></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="bikeWash" name="service" value="Bike Wash - ₹99" data-price="99">
+                                <label for="bikeWash">🏍️ Bike Wash<br><strong>₹99</strong></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="interiorCleaning" name="service" value="Interior Cleaning - ₹299" data-price="299">
+                                <label for="interiorCleaning">🛋️ Interior<br><strong>₹299</strong></label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" id="fullCleaning" name="service" value="Full Cleaning - ₹399" data-price="399">
+                                <label for="fullCleaning">✨ Full Cleaning<br><strong>₹399</strong></label>
+                            </div>
+                        </div>
+                        <div class="error-message" id="serviceError">Please select a service</div>
+                    </div>
+
+                    <!-- Customer Details -->
+                    <div class="form-group">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName" name="customerName" placeholder="Enter your full name" required>
+                        <div class="error-message" id="nameError">Please enter a valid name</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerEmail">Email</label>
+                            <input type="email" id="customerEmail" name="customerEmail" placeholder="your@email.com">
+                            <div class="error-message" id="emailError">Please enter a valid email</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Phone *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" placeholder="9XXXXXXXXX" pattern="[0-9]{10}" required>
+                            <div class="error-message" id="phoneError">Please enter a valid 10-digit phone number</div>
+                        </div>
+                    </div>
+
+                    <!-- Location & Date -->
+                    <div class="form-group">
+                        <label for="serviceArea">Service Area *</label>
+                        <select id="serviceArea" name="serviceArea" required>
+                            <option value="">Select your area</option>
+                            <option value="Anna Nagar">Anna Nagar</option>
+                            <option value="Villivakkam">Villivakkam</option>
+                            <option value="Kolathur">Kolathur</option>
+                            <option value="Ambattur">Ambattur</option>
+                            <option value="Mogappair">Mogappair</option>
+                        </select>
+                        <div class="error-message" id="areaError">Please select a service area</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingDate">Preferred Date *</label>
+                            <input type="date" id="bookingDate" name="bookingDate" required>
+                            <div class="error-message" id="dateError">Please select a date</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingTime">Preferred Time *</label>
+                            <input type="time" id="bookingTime" name="bookingTime" required>
+                            <div class="error-message" id="timeError">Please select a time</div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Details -->
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle Model/Number</label>
+                        <input type="text" id="vehicleType" name="vehicleType" placeholder="e.g., Honda Accord, DL01AB1234">
+                    </div>
+
+                    <!-- Additional Notes -->
+                    <div class="form-group">
+                        <label for="notes">Special Requests (Optional)</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions or requirements?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="confirmation-modal">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">✅</div>
+            <h3>Booking Confirmed!</h3>
+            <p>Your car wash service has been successfully booked.</p>
+            <div class="confirmation-details">
+                <p><strong>Booking ID:</strong> <span id="bookingId">QW-2026-0001</span></p>
+                <p><strong>Service:</strong> <span id="confirmService">Car Wash - ₹199</span></p>
+                <p><strong>Name:</strong> <span id="confirmName">John Doe</span></p>
+                <p><strong>Phone:</strong> <span id="confirmPhone">9XXXXXXXXX</span></p>
+                <p><strong>Date:</strong> <span id="confirmDate">2026-04-15</span></p>
+                <p><strong>Time:</strong> <span id="confirmTime">10:00 AM</span></p>
+                <p><strong>Location:</strong> <span id="confirmArea">Anna Nagar</span></p>
+            </div>
+            <p style="font-size: 0.9rem; color: #666;">We will contact you shortly to confirm the appointment.</p>
+            <button class="close-btn" onclick="closeConfirmation()">Close</button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navbar = document.getElementById('navbar');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = navbar.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('active');
+            } else {
+                scrollToTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature, .area-badge').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+
+        // ===== BOOKING SYSTEM =====
+        const bookingModal = document.getElementById('bookingModal');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const bookingForm = document.getElementById('bookingForm');
+        const bookNowBtns = document.querySelectorAll('#bookNowBtn, #bookNowBtn2');
+        const closeBookingModalBtn = document.getElementById('closeBookingModal');
+
+        // Open booking modal
+        bookNowBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                bookingModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                // Set minimum date to today
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('bookingDate').min = today;
+            });
+        });
+
+        // Close booking modal
+        closeBookingModalBtn.addEventListener('click', () => {
+            bookingModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === bookingModal) {
+                bookingModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            if (event.target === confirmationModal) {
+                confirmationModal.style.display = 'none';
+            }
+        });
+
+        // Form Validation
+        function validateForm() {
+            let isValid = true;
+
+            // Clear all error messages
+            document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+            document.querySelectorAll('input, select').forEach(el => el.classList.remove('error'));
+
+            // Check service
+            const serviceSelected = document.querySelector('input[name="service"]:checked');
+            if (!serviceSelected) {
+                document.getElementById('serviceError').classList.add('show');
+                isValid = false;
+            }
+
+            // Check name
+            const name = document.getElementById('customerName').value.trim();
+            if (!name || name.length < 2) {
+                document.getElementById('nameError').classList.add('show');
+                document.getElementById('customerName').classList.add('error');
+                isValid = false;
+            }
+
+            // Check email (optional but validate if provided)
+            const email = document.getElementById('customerEmail').value.trim();
+            if (email && !isValidEmail(email)) {
+                document.getElementById('emailError').classList.add('show');
+                document.getElementById('customerEmail').classList.add('error');
+                isValid = false;
+            }
+
+            // Check phone
+            const phone = document.getElementById('customerPhone').value.trim();
+            if (!phone || phone.length !== 10 || isNaN(phone)) {
+                document.getElementById('phoneError').classList.add('show');
+                document.getElementById('customerPhone').classList.add('error');
+                isValid = false;
+            }
+
+            // Check area
+            const area = document.getElementById('serviceArea').value;
+            if (!area) {
+                document.getElementById('areaError').classList.add('show');
+                document.getElementById('serviceArea').classList.add('error');
+                isValid = false;
+            }
+
+            // Check date
+            const date = document.getElementById('bookingDate').value;
+            if (!date) {
+                document.getElementById('dateError').classList.add('show');
+                document.getElementById('bookingDate').classList.add('error');
+                isValid = false;
+            }
+
+            // Check time
+            const time = document.getElementById('bookingTime').value;
+            if (!time) {
+                document.getElementById('timeError').classList.add('show');
+                document.getElementById('bookingTime').classList.add('error');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Format time to 12-hour format
+        function formatTime(time) {
+            const [hours, minutes] = time.split(':');
+            const hour = parseInt(hours);
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
+            return `${displayHour}:${minutes} ${ampm}`;
+        }
+
+        // Format date
+        function formatDate(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            return date.toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // Generate booking ID
+        function generateBookingId() {
+            return 'QW-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        }
+
+        // Handle form submission
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            // Get form data
+            const service = document.querySelector('input[name="service"]:checked').value;
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const area = document.getElementById('serviceArea').value;
+            const vehicleType = document.getElementById('vehicleType').value.trim();
+            const notes = document.getElementById('notes').value.trim();
+
+            // Close booking modal
+            bookingModal.style.display = 'none';
+
+            // Populate confirmation modal
+            document.getElementById('bookingId').textContent = generateBookingId();
+            document.getElementById('confirmService').textContent = service;
+            document.getElementById('confirmName').textContent = name;
+            document.getElementById('confirmPhone').textContent = phone;
+            document.getElementById('confirmDate').textContent = formatDate(date);
+            document.getElementById('confirmTime').textContent = formatTime(time);
+            document.getElementById('confirmArea').textContent = area;
+
+            // Show confirmation modal
+            confirmationModal.style.display = 'block';
+
+            // Log booking data (in real app, this would be sent to a server)
+            console.log({
+                service,
+                name,
+                phone,
+                email: document.getElementById('customerEmail').value,
+                date,
+                time,
+                area,
+                vehicleType,
+                notes,
+                bookingId: document.getElementById('bookingId').textContent
+            });
+
+            // Reset form
+            bookingForm.reset();
+            document.body.style.overflow = 'auto';
+        });
+
+        function closeConfirmation() {
+            confirmationModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Real-time validation
+        document.getElementById('customerName').addEventListener('blur', function() {
+            if (this.value.trim().length < 2) {
+                this.classList.add('error');
+                document.getElementById('nameError').classList.add('show');
+            } else {
+                this.classList.remove('error');
+                document.getElementById('nameError').classList.remove('show');
+            }
+        });
+
+        document.getElementById('customerPhone').addEventListener('blur', function() {
+            if (this.value.length !== 10 || isNaN(this.value)) {
+                this.classList.add('error');
+                document.getElementById('phoneError').classList.add('show');
+            } else {
+                this.classList.remove('error');
+                document.getElementById('phoneError').classList.remove('show');
+            }
+        });
+
+        document.getElementById('customerEmail').addEventListener('blur', function() {
+            if (this.value && !isValidEmail(this.value)) {
+                this.classList.add('error');
+                document.getElementById('emailError').classList.add('show');
+            } else {
+                this.classList.remove('error');
+                document.getElementById('emailError').classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
